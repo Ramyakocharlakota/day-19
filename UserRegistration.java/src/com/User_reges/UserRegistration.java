@@ -6,6 +6,6 @@ public static void main( String[] args ) {
  }
  // validate first name
  public static boolean firstName( String firstName ) {
-    return firstName.matches( "[A-Z][a-z]*" );
+    return firstName.matches("^[A-Z]+[a-z]{3,}" );
  }
 }
