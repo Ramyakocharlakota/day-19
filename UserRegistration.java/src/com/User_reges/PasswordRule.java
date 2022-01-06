@@ -1,0 +1,30 @@
+package com.User_reges;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class PasswordRule {
+		public boolean passwrdRule(String inputStr) {
+			String passwordPattern =  "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,}$";
+			Pattern regex = Pattern.compile(passwordPattern);
+			Matcher passwordMatcher = regex.matcher(inputStr);
+			if (passwordMatcher.matches()) {
+				System.out.println(inputStr + " succesfully loggedin and passed first rule.");
+			} else {
+				System.out.println(inputStr + " is invalid password.Kindly input minimum 8 character.");
+			}
+			return false;
+		}
+		
+		public static void main(String[] args) {
+			PasswordRule psswrd = new PasswordRule();
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Please log in using 8 character password.");
+			System.out.print("Enter the Password : ");
+			String inputStr = sc.nextLine();
+			sc.close();
+			psswrd.passwrdRule(inputStr);
+		}
+		// TODO Auto-generated method stub
+
+	}
