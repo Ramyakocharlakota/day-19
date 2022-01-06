@@ -1,14 +1,12 @@
 package com.User_reges;
 
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class UserRegestrationUC2 {
-	public static void main(String[] args) {
-				try
-		}
-				}
-	}
 
+		public static void main( String[] args ) {
+		    System.out.println(LastName("KOCHARLAKOTA"));
+		 }
+		 // validate first name
+		 public static boolean LastName( String LastName ) {
+		    return LastName.matches( "[A-Z]+([ '-][a-zA-Z]+)*");
+		 }
 }
